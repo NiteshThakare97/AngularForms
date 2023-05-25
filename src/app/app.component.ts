@@ -11,6 +11,9 @@ export class AppComponent {
   defaultCountry = 'india';
   firstname: string;
   lastname: string;
+  email: string;
+  country: string;
+  gen: string;
   defaultGender = 'Female'
 
   gender = [
@@ -22,6 +25,14 @@ export class AppComponent {
 
   onSubmit(){
     console.log(this.form);
+
+    this.firstname = this.form.value.personalDetails.firstname;
+    this.lastname = this.form.value.personalDetails.lastname;
+    this.email = this.form.value.personalDetails.email;
+    this.country = this.form.value.country;
+    this.gen = this.form.value.gender;
+
+    this.form.reset();
   }
 
   setDefaultValues(){
