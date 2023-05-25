@@ -23,4 +23,31 @@ export class AppComponent {
   onSubmit(){
     console.log(this.form);
   }
+
+  setDefaultValues(){
+    // this.form.value.personalDetails.firstname = 'John';
+    // this.form.value.personalDetails.lastname = 'Smith';
+    // this.form.value.personalDetails.email = 'abc@example.com';
+
+    // setValue() method should be used to set values of the form if we want to set values for all the form controls.
+    // this.form.setValue({
+    //   country: '',
+    //   gender: '',
+    //   hobbies: '',
+    //   personalDetails: {
+    //     firstname: 'John',
+    //     lastname: 'Smith',
+    //     email: 'abc@example.com'
+    //   }
+    // })
+
+    //patchValue() method
+    this.form.form.patchValue({
+      personalDetails: {
+        firstname: 'John',
+        lastname: 'Smith',
+        email: 'abc@example.com'
+      }
+    })
+  }
 }
